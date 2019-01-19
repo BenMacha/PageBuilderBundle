@@ -1,0 +1,38 @@
+{
+  "name": "benmacha/page-builder-bundle",
+  "description": "Symfony Template Bundle",
+  "type": "symfony-bundle",
+  "keywords": ["framework","Symfony","template","class","bundle"],
+  "require": {
+    "php": "^5.5.9 || ^7.0",
+    "ext-json": "*",
+    "symfony/framework-bundle": "^2.8 || ^3.0 || ^4.0",
+    "twig/twig": "^1.0||^2.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Benmacha\\PageBuilderBundle\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ali Ben Macha",
+      "email": "contact@benmacha.tn"
+    }
+  ]
+}
