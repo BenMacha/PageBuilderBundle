@@ -544,7 +544,7 @@ macha.Builder = {
 					if (component.image) {
 
 						item.css({
-							backgroundImage: "url(" + '/bundles/pagebuilder/libs/builder/' + component.image + ")",
+							backgroundImage: "url(" + '/bundles/benmachapagebuilder/libs/builder/' + component.image + ")",
 							backgroundRepeat: "no-repeat"
 						})
 					}
@@ -1368,11 +1368,11 @@ macha.FileManager = {
 				
 				if (tree[i].children.length > 0) 
 					html += '<li data-component="' + node.name + '" data-node="' + node.node + '">\
-					<label for="id' + j + '" style="background-image:url(/bundles/pagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label> <input type="checkbox" id="id' + j + '" />\
+					<label for="id' + j + '" style="background-image:url(/bundles/benmachapagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label> <input type="checkbox" id="id' + j + '" />\
 					<ol>' + drawComponentsTree(node.children) + '</ol></li>';		
 				else 
 					html +='<li data-component="' + node.name + '" class="file"  data-node="' + node.node + '">\
-							<a href="#" style="background-image:url(/bundles/pagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></a></li>';
+							<a href="#" style="background-image:url(/bundles/benmachapagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></a></li>';
 			}
 			
 			return html;
@@ -1392,7 +1392,7 @@ macha.FileManager = {
 				if (tree[i].children.length > 0) 
 				{
 					var li = $('<li data-component="' + node.name + '">\
-					<label for="id' + j + '" style="background-image:url(/bundles/pagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label>\
+					<label for="id' + j + '" style="background-image:url(/bundles/benmachapagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label>\
 					<input type="checkbox" id="id' + j + '">\
 					</li>');		
 					li.data("node", node.node);
@@ -1402,7 +1402,7 @@ macha.FileManager = {
 				else 
 				{
 					var li =$('<li data-component="' + node.name + '" class="file">\
-							<label for="id' + j + '" style="background-image:url(/bundles/pagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label>\
+							<label for="id' + j + '" style="background-image:url(/bundles/benmachapagebuilder/libs/builder/' + node.image + ')"><span>' + node.name + '</span></label>\
 							<input type="checkbox" id="id' + j + '"></li>');
 					li.data("node", node.node);							
 					html.append(li);

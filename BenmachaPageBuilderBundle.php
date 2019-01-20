@@ -21,13 +21,18 @@ namespace Benmacha\PageBuilderBundle;
 use Benmacha\PageBuilderBundle\DependencyInjection\BenmachaPageBuilderExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 
-class PageBuilderBundle extends Bundle
+
+class BenmachaPageBuilderBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
 
         $container->registerExtension(new BenmachaPageBuilderExtension());
+
+
     }
+
 }

@@ -36,7 +36,7 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request)
     {
-        return $this->render('@PageBuilder/builder/index.html.twig');
+        return $this->render('@BenmachaPageBuilder/builder/index.html.twig');
     }
 
     /**
@@ -49,7 +49,7 @@ class DefaultController extends Controller
      */
     public function componentsAction(Request $request)
     {
-        return $this->render('@PageBuilder/builder/components.js.twig');
+        return $this->render('@BenmachaPageBuilder/builder/components.js.twig');
     }
 
 }

@@ -4,11 +4,10 @@ namespace Benmacha\PageBuilderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
 use Doctrine\ORM\Mapping\MappedSuperclass;
 
 /** @MappedSuperclass */
-abstract class Page
+abstract class Version
 {
 
     /**
@@ -23,23 +22,9 @@ abstract class Page
     /**
      * @var Page
      *
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="pages")
+     * @ORM\ManyToOne(targetEntity="Page", inversedBy="versions")
      */
-    protected $project;
-
-    /**
-     * @var Page
-     *
-     * @ORM\OneToMany(targetEntity="Version", mappedBy="page")
-     */
-    protected $versions;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="path", type="string", length=255, unique=true)
-     */
-    protected $path;
+    protected $page;
 
     /**
      * @var string
@@ -47,5 +32,12 @@ abstract class Page
      * @ORM\Column(name="sourceCode", type="text")
      */
     protected $sourceCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=255)
+     */
+    protected $version;
 
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +12,10 @@
     <base href="">
     <title>BenMacha Page Builder</title>
 
-    <link href="{{ asset('bundles/pagebuilder/css/editor.css') }}" rel="stylesheet">
-    <link href="{{ asset('bundles/pagebuilder/css/line-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/benmachapagebuilder/css/editor.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/benmachapagebuilder/css/line-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/benmachapagebuilder/libs/codemirror/lib/codemirror.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('bundles/benmachapagebuilder/libs/codemirror/theme/material.css') }}" rel="stylesheet"/>
 </head>
 <body>
 
@@ -20,7 +23,7 @@
 <div id="macha-builder">
 
     <div id="top-panel">
-        <img src="{{ asset('bundles/pagebuilder/img/logo.png') }}" alt="macha" class="float-left" id="logo">
+        <img src="{{ asset('bundles/benmachapagebuilder/img/logo.png') }}" alt="macha" class="float-left" id="logo">
 
 
         <div class="btn-group mr-3" role="group">
@@ -79,7 +82,7 @@
                 <ol>
                     <!-- li>
                         <label for="folder1"><span>Folder 1</span></label> <input type="checkbox" checked id="folder1" />
-                        <ol>
+                        <ol> 
                             <li class="file"><a href="document.html.pdf">File 1</a></li>
                             <li>
                                 <label for="subfolder1">Subfolder 1</label> <input type="checkbox" id="subfolder1" />
@@ -182,28 +185,74 @@
             </div>
         </div>
 
-        <div id="components">
+
+        <div class="drag-elements">
 
             <div class="header">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true"><i class="la la-cog"></i> <small>Components</small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="blocks-tab" data-toggle="tab" href="#blocks" role="tab" aria-controls="blocks" aria-selected="false"><i class="la la-image"></i> <small>Blocks</small></a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="components" role="tabpanel" aria-labelledby="components-tab">
 
-                <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-macha-action="componentSearch" data-macha-on="keyup">
-                <button id="clear-backspace"  data-macha-action="clearComponentSearch">
-                    <i class="la la-close"></i>
-                </button>
 
-            </div>
 
-            <div id="components-sidepane" class="sidepane">
-                <div>
+                        <div class="search">
+                            <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-macha-action="componentSearch" data-macha-on="keyup">
+                            <button class="clear-backspace"  data-macha-action="clearComponentSearch">
+                                <i class="la la-close"></i>
+                            </button>
+                        </div>
 
-                    <ul id="components-list" class="clearfix">
-                    </ul>
+                        <div id="components-sidepane" class="sidepane">
+                            <div>
 
+                                <ul id="components-list" class="clearfix">
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="tab-pane fade" id="blocks" role="tabpanel" aria-labelledby="blocks-tab">
+
+
+
+
+                        <div class="search">
+                            <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-macha-action="componentSearch" data-macha-on="keyup">
+                            <button class="clear-backspace"  data-macha-action="clearComponentSearch">
+                                <i class="la la-close"></i>
+                            </button>
+                        </div>
+
+                        <div id="components-sidepane" class="sidepane">
+                            <div>
+
+                                <ul id="components-list" class="clearfix">
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
+
 
     <div id="canvas">
         <div id="iframe-wrapper">
@@ -562,7 +611,6 @@
 
     </script>
 
-
     <script id="macha-filemanager-page" type="text/html">
         <li data-url="{{ '{%=url%}' }}" data-page="{{ '{%=name%}' }}">
             <label for="{{ '{%=name%}' }}"><span>{{ '{%=title%}' }}</span></label> <input type="checkbox" checked id="{{ '{%=name%}' }}" />
@@ -584,7 +632,6 @@
 
     </script>
 
-
     <script id="macha-property" type="text/html">
 
         <div class="form-group {{ '{% if (typeof col !== \'undefined\' && col != false) { %}' }} col-sm-{{ '{%=col%}' }} d-inline-block {{ '{% } else { %}' }}row{{ '{% } %}' }}" data-key="{{ '{%=key%}' }}" {{ '{% if (typeof group !== \'undefined\' && group != null) { %}' }}data-group="{{ '{%=group%}' }}" {{ '{% } %}' }}>
@@ -598,7 +645,6 @@
     </script>
 
     <!--// end templates -->
-
 
     <!-- export html modal-->
     <div class="modal fade" id="textarea-modal" tabindex="-1" role="dialog" aria-labelledby="textarea-modal" aria-hidden="true">
@@ -627,7 +673,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">machaJs</h5>
+                    <h5 class="modal-title">VvvebJs</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -644,33 +690,30 @@
     </div>
 
     <!-- jquery-->
-    <script src="{{ asset('bundles/pagebuilder/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/js/jquery.hotkeys.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/js/jquery.hotkeys.js') }}"></script>
 
     <!-- bootstrap-->
-    <script src="{{ asset('bundles/pagebuilder/js/popper.min.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/js/popper.min.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/js/bootstrap.min.js') }}"></script>
 
     <!-- builder code-->
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/builder.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/builder.js') }}"></script>
     <!-- undo manager-->
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/undo.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/undo.js') }}"></script>
     <!-- inputs-->
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/inputs.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/inputs.js') }}"></script>
     <!-- components-->
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/components-bootstrap4.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/components-widgets.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/components-bootstrap4.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/components-widgets.js') }}"></script>
 
     <!-- plugins -->
 
     <!-- code mirror - code editor syntax highlight -->
-    <link href="{{ asset('bundles/pagebuilder/libs/codemirror/lib/codemirror.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('bundles/pagebuilder/libs/codemirror/theme/material.css') }}" rel="stylesheet"/>
-    <script src="{{ asset('bundles/pagebuilder/libs/codemirror/lib/codemirror.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/libs/codemirror/lib/xml.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/libs/codemirror/lib/formatting.js') }}"></script>
-    <script src="{{ asset('bundles/pagebuilder/libs/builder/plugin-codemirror.js') }}"></script>
-
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/codemirror/lib/codemirror.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/codemirror/lib/xml.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/codemirror/lib/formatting.js') }}"></script>
+    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/plugin-codemirror.js') }}"></script>
 
     <script>
         $(document).ready(function()
@@ -683,15 +726,15 @@
             macha.FileManager.init();
             macha.FileManager.addPages(
                 [
-                    {name:"narrow-jumbotron", title:"Jumbotron",  url: "{{ path('default_home_page') }}", assets: ['demo/narrow-jumbotron/narrow-jumbotron.css']},
-                    {name:"landio", title:"Landio landing page",  url: "demo/landio/index.html", assets: ['demo/landio/landio.css']},
+                    {name:"narrow-jumbotron", title:"Jumbotron",  url: "{{ path('default_home_page') }}"},
+                    /*{name:"landio", title:"Landio landing page",  url: "demo/landio/index.html", assets: ['demo/landio/landio.css']},
                     {name:"album", title:"Album",  url: "demo/album/index.html", assets: ['demo/album/album.css']},
                     {name:"blog", title:"Blog",  url: "demo/blog/index.html", assets: ['demo/blog/blog.css']},
                     {name:"carousel", title:"Carousel",  url: "demo/carousel/index.html", assets: ['demo/carousel/carousel.css']},
                     {name:"offcanvas", title:"Offcanvas",  url: "demo/offcanvas/index.html", assets: ['demo/offcanvas/offcanvas.css','demo/offcanvas/offcanvas.js']},
                     {name:"pricing", title:"Pricing",  url: "demo/pricing/index.html", assets: ['demo/pricing/pricing.css']},
                     {name:"product", title:"Product",  url: "demo/product/index.html", assets: ['demo/product/product.css']},
-                    {name:"ecommerce", title:"eCommerce homepage",  url: "ecommerce_demo/index.html"},
+                    {name:"ecommerce", title:"eCommerce homepage",  url: "ecommerce_demo/index.html"},*/
                 ]);
 
             macha.FileManager.loadPage("narrow-jumbotron");
