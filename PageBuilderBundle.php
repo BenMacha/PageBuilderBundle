@@ -18,7 +18,6 @@
 
 namespace Benmacha\PageBuilderBundle;
 
-use Benmacha\TemplateBundle\DependencyInjection\BenmachaTemplateExtenstion;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

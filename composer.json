@@ -1,6 +1,6 @@
 {
   "name": "benmacha/page-builder-bundle",
-  "description": "Symfony Template Bundle",
+  "description": "Symfony Page Builder Bundle",
   "type": "symfony-bundle",
   "keywords": ["framework","Symfony","template","class","bundle"],
   "require": {
