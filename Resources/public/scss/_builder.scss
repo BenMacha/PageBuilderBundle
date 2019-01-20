@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 
 $builder-header-top-height:35px !default;
@@ -63,7 +63,7 @@ body
 	background:#eee;
 }
 
-#vvveb-builder
+#macha-builder
 {
 	// panels
 	#left-panel, #right-panel
@@ -327,7 +327,7 @@ body
 		right: $builder-right-panel-width;;
 		background-color:#fff;
 		
-		#vvveb-code-editor 
+		#macha-code-editor
 		{
 			//height:calc( 100% - #{$builder-bottom-panel-height});
 			width:100%;

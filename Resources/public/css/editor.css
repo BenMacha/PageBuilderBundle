@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
@@ -9088,7 +9088,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 /* CSS Tree menu styles */
 .tree ol {
@@ -9174,7 +9174,7 @@ https://github.com/givanz/VvvebJs
 body {
   background: #eee; }
 
-#vvveb-builder #left-panel, #vvveb-builder #right-panel {
+#macha-builder #left-panel, #macha-builder #right-panel {
   border-color: #ddd;
   border-style: solid;
   border-width: 0px;
@@ -9184,7 +9184,7 @@ body {
   top: 35px;
   z-index: 10; }
 
-#vvveb-builder #left-panel {
+#macha-builder #left-panel {
   float: left;
   border-right-width: 1px;
   overflow: hidden;
@@ -9200,35 +9200,35 @@ body {
   width: 260px;
   height: 100%;
   max-height: 100%; }
-  #vvveb-builder #left-panel:hover {
+  #macha-builder #left-panel:hover {
     width: 275px; }
-  #vvveb-builder #left-panel #components > .header {
+  #macha-builder #left-panel #components > .header {
     border-top: 1px solid #ddd;
     position: relative; }
-    #vvveb-builder #left-panel #components > .header #clear-backspace {
+    #macha-builder #left-panel #components > .header #clear-backspace {
       border: none;
       background: none;
       position: absolute;
       top: 3px;
       right: 0px;
       opacity: 0.8; }
-      #vvveb-builder #left-panel #components > .header #clear-backspace i {
+      #macha-builder #left-panel #components > .header #clear-backspace i {
         font-size: 13px; }
-      #vvveb-builder #left-panel #components > .header #clear-backspace:hover {
+      #macha-builder #left-panel #components > .header #clear-backspace:hover {
         opacity: 1; }
-    #vvveb-builder #left-panel #components > .header input:focus + #clear-backspace,
-    #vvveb-builder #left-panel #components > .header input:hover + #clear-backspace {
+    #macha-builder #left-panel #components > .header input:focus + #clear-backspace,
+    #macha-builder #left-panel #components > .header input:hover + #clear-backspace {
       opacity: 1; }
-  #vvveb-builder #left-panel #components-list {
+  #macha-builder #left-panel #components-list {
     height: 98%;
     height: calc(99% - 200px);
     overflow-y: auto;
     overflow-x: hidden;
     width: 275px; }
-  #vvveb-builder #left-panel #filemanager {
+  #macha-builder #left-panel #filemanager {
     height: 200px;
     width: 275px; }
-    #vvveb-builder #left-panel #filemanager .header {
+    #macha-builder #left-panel #filemanager .header {
       font-size: 11px;
       font-weight: 600;
       height: 2rem;
@@ -9243,15 +9243,15 @@ body {
       margin-bottom: 0rem;
       padding: 0.0rem 0.5rem;
       padding: 0rem 0rem 0.5rem 1.5rem; }
-      #vvveb-builder #left-panel #filemanager .header a {
+      #macha-builder #left-panel #filemanager .header a {
         color: #007bff; }
-    #vvveb-builder #left-panel #filemanager .tree {
+    #macha-builder #left-panel #filemanager .tree {
       height: 170px;
       padding: 0.5rem 0rem;
       overflow-y: auto;
       overflow-x: hidden; }
 
-#vvveb-builder #right-panel {
+#macha-builder #right-panel {
   float: right;
   right: 0px;
   border-left-width: 1px;
@@ -9289,42 +9289,42 @@ body {
 		-moz-box-shadow: -1px 0px 2px rgba(0,0,0,.3);
 		-webkit-box-shadow: -1px 0px 2px rgba(0,0,0,.3);
 */ }
-  #vvveb-builder #right-panel #component-properties {
+  #macha-builder #right-panel #component-properties {
     overflow-y: auto;
     overflow-x: hidden;
     height: 98%; }
-    #vvveb-builder #right-panel #component-properties .custom-select {
+    #macha-builder #right-panel #component-properties .custom-select {
       height: auto; }
-    #vvveb-builder #right-panel #component-properties .form-control, #vvveb-builder #right-panel #component-properties .custom-select {
+    #macha-builder #right-panel #component-properties .form-control, #macha-builder #right-panel #component-properties .custom-select {
       padding: .275rem 0.25rem; }
-  #vvveb-builder #right-panel .form-group {
+  #macha-builder #right-panel .form-group {
     margin-right: 0px;
     margin-left: 0px; }
-    #vvveb-builder #right-panel .form-group [class^="col-sm-"] {
+    #macha-builder #right-panel .form-group [class^="col-sm-"] {
       padding-left: 10px;
       padding-right: 10px; }
-    #vvveb-builder #right-panel .form-group label {
+    #macha-builder #right-panel .form-group label {
       font-size: 11px;
       margin-bottom: 0px; }
-      #vvveb-builder #right-panel .form-group label i {
+      #macha-builder #right-panel .form-group label i {
         font-size: 14px; }
-    #vvveb-builder #right-panel .form-group .input {
+    #macha-builder #right-panel .form-group .input {
       width: 100%; }
-    #vvveb-builder #right-panel .form-group .custom-control {
+    #macha-builder #right-panel .form-group .custom-control {
       min-height: 1.1rem; }
 
-#vvveb-builder #top-panel {
+#macha-builder #top-panel {
   height: 35px;
   border-bottom: 1px solid #eee;
   text-align: center;
   background-color: #fafafa; }
-  #vvveb-builder #top-panel .btn-group .btn {
+  #macha-builder #top-panel .btn-group .btn {
     padding: 0rem 0.5rem;
     font-size: 1.25rem; }
-  #vvveb-builder #top-panel .btn-group.responsive-btns .btn {
+  #macha-builder #top-panel .btn-group.responsive-btns .btn {
     font-size: 1.4rem; }
 
-#vvveb-builder #bottom-panel {
+#macha-builder #bottom-panel {
   width: auto;
   height: 35px;
   bottom: 0px;
@@ -9333,10 +9333,10 @@ body {
   left: 260px;
   right: 260px;
   background-color: #fff; }
-  #vvveb-builder #bottom-panel #vvveb-code-editor {
+  #macha-builder #bottom-panel #macha-code-editor {
     width: 100%;
     height: 100%; }
-    #vvveb-builder #bottom-panel #vvveb-code-editor textarea {
+    #macha-builder #bottom-panel #macha-code-editor textarea {
       height: 100%;
       width: 100%;
       border: none;
@@ -9344,13 +9344,13 @@ body {
       margin-bottom: 10px;
       background: #fafafa; }
 
-#vvveb-builder.bottom-panel-expand #bottom-panel {
+#macha-builder.bottom-panel-expand #bottom-panel {
   height: 50%; }
 
-#vvveb-builder.bottom-panel-expand #canvas {
+#macha-builder.bottom-panel-expand #canvas {
   height: 50%; }
 
-#vvveb-builder #canvas {
+#macha-builder #canvas {
   margin-right: 260px;
   margin-left: 260px;
   width: 100%;
@@ -9360,31 +9360,31 @@ body {
   top: 35px;
   position: fixed;
   transition: width 0.35s, left 0.35s; }
-  #vvveb-builder #canvas #iframe-wrapper, #vvveb-builder #canvas iframe {
+  #macha-builder #canvas #iframe-wrapper, #macha-builder #canvas iframe {
     width: 100%;
     height: 100%;
     border: none; }
-  #vvveb-builder #canvas.tablet {
+  #macha-builder #canvas.tablet {
     width: 768px !important;
     left: calc(50% - 644px); }
-  #vvveb-builder #canvas.mobile {
+  #macha-builder #canvas.mobile {
     width: 320px !important;
     left: calc(50% - 420px); }
 
-#vvveb-builder.preview #canvas {
+#macha-builder.preview #canvas {
   width: 100%;
   margin-left: 0px;
   margin-right: 0px; }
 
-#vvveb-builder.preview #left-panel, #vvveb-builder.preview #right-panel {
+#macha-builder.preview #left-panel, #macha-builder.preview #right-panel {
   display: none; }
 
-#vvveb-builder #iframe-layer {
+#macha-builder #iframe-layer {
   overflow: hidden;
   pointer-events: none;
   white-space: nowrap; }
 
-#vvveb-builder #highlight-box {
+#macha-builder #highlight-box {
   position: absolute;
   border: 1px solid #4285f4;
   width: 0px;
@@ -9392,12 +9392,12 @@ body {
   top: 0px;
   left: 0px; }
 
-#vvveb-builder .text-edit#select-box {
+#macha-builder .text-edit#select-box {
   border-style: dashed;
   /*border-width:1px;*/
   background: transparent; }
 
-#vvveb-builder #select-box {
+#macha-builder #select-box {
   position: absolute;
   border: 1px solid #4285f4;
   background: rgba(66, 133, 244, 0.1);
@@ -9407,7 +9407,7 @@ body {
   left: 0px;
   display: none; }
 
-#vvveb-builder #select-actions, #vvveb-builder #wysiwyg-editor {
+#macha-builder #select-actions, #macha-builder #wysiwyg-editor {
   position: absolute;
   right: -1px;
   top: -25px;
@@ -9416,23 +9416,23 @@ body {
   padding: 0.05rem 0.2rem 0.05rem 0.2rem;
   border-radius: 3px 3px 0px 0px; }
 
-#vvveb-builder #wysiwyg-editor {
+#macha-builder #wysiwyg-editor {
   top: -22px;
   right: auto;
   left: -1px;
   display: none; }
 
-#vvveb-builder #select-actions a, #vvveb-builder #wysiwyg-editor a {
+#macha-builder #select-actions a, #macha-builder #wysiwyg-editor a {
   pointer-events: auto;
   color: #fff;
   font-size: 16px;
   padding-right: 2px;
   padding: 0px 5px; }
-  #vvveb-builder #select-actions a:hover, #vvveb-builder #wysiwyg-editor a:hover {
+  #macha-builder #select-actions a:hover, #macha-builder #wysiwyg-editor a:hover {
     text-decoration: none;
     background: #72a4f7; }
 
-#vvveb-builder #highlight-name {
+#macha-builder #highlight-name {
   background: #4285f4;
   font-size: 12px;
   color: #fff;
@@ -9444,20 +9444,20 @@ body {
   display: inline-block;
   border-radius: 3px 3px 0px 0px; }
 
-#vvveb-builder #right-panel {
+#macha-builder #right-panel {
   color: #777; }
 
-#vvveb-builder #right-panel, #vvveb-builder #right-panel select, #vvveb-builder #right-panel input {
+#macha-builder #right-panel, #macha-builder #right-panel select, #macha-builder #right-panel input {
   font-size: 12px; }
 
-#vvveb-builder #right-panel label {
+#macha-builder #right-panel label {
   margin-top: 4px; }
 
-#vvveb-builder ::-webkit-scrollbar {
+#macha-builder ::-webkit-scrollbar {
   width: 0.8em;
   background: #fafafa; }
 
-#vvveb-builder ::-webkit-scrollbar-thumb {
+#macha-builder ::-webkit-scrollbar-thumb {
   background: #ccc; }
 
 /* style for drag element */

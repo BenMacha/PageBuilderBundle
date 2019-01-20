@@ -13,13 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 
-Vvveb.ComponentsGroup['Server Components'] = ["components/products", "components/product", "components/categories", "components/manufacturers", "components/search", "components/user", "components/product_gallery", "components/cart", "components/checkout", "components/filters", "components/product", "components/slider"];
+macha.ComponentsGroup['Server Components'] = ["components/products", "components/product", "components/categories", "components/manufacturers", "components/search", "components/user", "components/product_gallery", "components/cart", "components/checkout", "components/filters", "components/product", "components/slider"];
 
 
-Vvveb.Components.add("components/product", {
+macha.Components.add("components/product", {
     name: "Product",
     attributes: ["data-component-product"],
 
@@ -75,7 +75,7 @@ Vvveb.Components.add("components/product", {
 });    
 
 
-Vvveb.Components.add("components/products", {
+macha.Components.add("components/products", {
     name: "Products",
     attributes: ["data-component-products"],
 
@@ -219,7 +219,7 @@ Vvveb.Components.add("components/products", {
     ]
 });
 
-Vvveb.Components.add("components/manufacturers", {
+macha.Components.add("components/manufacturers", {
     name: "Manufacturers",
     classes: ["component_manufacturers"],
     image: "icons/categories.svg",
@@ -240,7 +240,7 @@ Vvveb.Components.add("components/manufacturers", {
     ]
 });
 
-Vvveb.Components.add("components/categories", {
+macha.Components.add("components/categories", {
     name: "Categories",
     classes: ["component_categories"],
     image: "icons/categories.svg",
@@ -252,7 +252,7 @@ Vvveb.Components.add("components/categories", {
         inputtype: FileUploadInput
     }]
 });
-Vvveb.Components.add("components/search", {
+macha.Components.add("components/search", {
     name: "Search",
     classes: ["component_search"],
     image: "icons/search.svg",
@@ -274,7 +274,7 @@ Vvveb.Components.add("components/search", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/user", {
+macha.Components.add("components/user", {
     name: "User",
     classes: ["component_user"],
     image: "icons/user.svg",
@@ -296,7 +296,7 @@ Vvveb.Components.add("components/user", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/product_gallery", {
+macha.Components.add("components/product_gallery", {
     name: "Product gallery",
     classes: ["component_product_gallery"],
     image: "icons/product_gallery.svg",
@@ -318,7 +318,7 @@ Vvveb.Components.add("components/product_gallery", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/cart", {
+macha.Components.add("components/cart", {
     name: "Cart",
     classes: ["component_cart"],
     image: "icons/cart.svg",
@@ -340,7 +340,7 @@ Vvveb.Components.add("components/cart", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/checkout", {
+macha.Components.add("components/checkout", {
     name: "Checkout",
     classes: ["component_checkout"],
     image: "icons/checkout.svg",
@@ -362,7 +362,7 @@ Vvveb.Components.add("components/checkout", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/filters", {
+macha.Components.add("components/filters", {
     name: "Filters",
     classes: ["component_filters"],
     image: "icons/filters.svg",
@@ -384,7 +384,7 @@ Vvveb.Components.add("components/filters", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/product", {
+macha.Components.add("components/product", {
     name: "Product",
     classes: ["component_product"],
     image: "icons/product.svg",
@@ -406,7 +406,7 @@ Vvveb.Components.add("components/product", {
         inputtype: TextInput
     }]
 });
-Vvveb.Components.add("components/slider", {
+macha.Components.add("components/slider", {
     name: "Slider",
     classes: ["component_slider"],
     image: "icons/slider.svg",

@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 
 /*
@@ -50,7 +50,7 @@ MutationRecord.oldValue 			String 		The return value depends on the MutationReco
 												For childList, it is null.
 */
  
-Vvveb.Undo = {
+macha.Undo = {
 	
 	undos: [],
 	mutations: [],
@@ -65,7 +65,7 @@ Vvveb.Undo = {
 			this.mutations.push(mutation);
 			this.undoIndex++;
 		*/
-		Vvveb.Builder.frameBody.trigger("vvveb.undo.add");
+		macha.Builder.frameBody.trigger("macha.undo.add");
 		this.mutations.splice(++this.undoIndex, 0, mutation);
 	 },
 
@@ -135,7 +135,7 @@ Vvveb.Undo = {
 			break;
 		}
 		
-		Vvveb.Builder.frameBody.trigger("vvveb.undo.restore");
+		macha.Builder.frameBody.trigger("macha.undo.restore");
 	 },
 	 
 	undo : function() {	

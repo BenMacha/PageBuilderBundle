@@ -1,0 +1,6 @@
+services:
+
+    benmacha_pagebuilder_page_service:
+        public: true
+        class: Benmacha\PageBuilderBundle\Services\PageService
+        arguments: ['@doctrine.orm.default_entity_manager', '%benmacha.pagebuilder.model.page%','%benmacha.pagebuilder.model.version%']

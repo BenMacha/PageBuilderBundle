@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-https://github.com/givanz/VvvebJs
+https://github.com/givanz/machaJs
 */
 
 var Input = {
@@ -31,7 +31,7 @@ var Input = {
 	},
 
 	renderTemplate: function(name, data) {
-		return tmpl("vvveb-input-" + name, data);
+		return tmpl("macha-input-" + name, data);
 	},
 
 	setValue: function(value) {

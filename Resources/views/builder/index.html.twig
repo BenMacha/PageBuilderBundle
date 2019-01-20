@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <base href="">
-    <title>VvvebJs</title>
+    <title>BenMacha Page Builder</title>
 
     <link href="{{ asset('bundles/pagebuilder/css/editor.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/pagebuilder/css/line-awesome.css') }}" rel="stylesheet">
@@ -17,52 +17,52 @@
 <body>
 
 
-<div id="vvveb-builder">
+<div id="macha-builder">
 
     <div id="top-panel">
-        <img src="{{ asset('bundles/pagebuilder/img/logo.png') }}" alt="Vvveb" class="float-left" id="logo">
+        <img src="{{ asset('bundles/pagebuilder/img/logo.png') }}" alt="macha" class="float-left" id="logo">
 
 
         <div class="btn-group mr-3" role="group">
-            <button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)" id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
+            <button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)" id="undo-btn" data-macha-action="undo" data-macha-shortcut="ctrl+z">
                 <i class="la la-undo"></i>
             </button>
 
-            <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
+            <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-macha-action="redo" data-macha-shortcut="ctrl+shift+z">
                 <i class="la la-undo la-flip-horizontal"></i>
             </button>
         </div>
 
 
         <div class="btn-group mr-3" role="group">
-            <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-toggle="button" aria-pressed="false" data-vvveb-action="fullscreen">
+            <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-toggle="button" aria-pressed="false" data-macha-action="fullscreen">
                 <i class="la la-arrows"></i>
             </button>
 
-            <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-toggle="button" aria-pressed="false" data-vvveb-action="preview">
+            <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-toggle="button" aria-pressed="false" data-macha-action="preview">
                 <i class="la la-eye"></i>
             </button>
 
-            <button class="btn btn-light" title="Export (Ctrl + E)" id="save-btn" data-vvveb-action="save" data-vvveb-shortcut="ctrl+e">
+            <button class="btn btn-light" title="Export (Ctrl + E)" id="save-btn" data-macha-action="save" data-macha-shortcut="ctrl+e">
                 <i class="la la-save"></i>
             </button>
 
-            <button class="btn btn-light" title="Download" id="save-btn" data-vvveb-action="download" download="index.html">
+            <button class="btn btn-light" title="Download" id="save-btn" data-macha-action="download" download="index.html">
                 <i class="la la-download"></i>
             </button>
         </div>
 
 
         <div class="btn-group float-right responsive-btns" role="group">
-            <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-vvveb-action="viewport">
+            <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-macha-action="viewport">
                 <i class="la la-mobile-phone"></i>
             </button>
 
-            <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-vvveb-action="viewport">
+            <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-macha-action="viewport">
                 <i class="la la-tablet"></i>
             </button>
 
-            <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-vvveb-action="viewport">
+            <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-macha-action="viewport">
                 <i class="la la-laptop"></i>
             </button>
 
@@ -186,8 +186,8 @@
 
             <div class="header">
 
-                <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-vvveb-action="componentSearch" data-vvveb-on="keyup">
-                <button id="clear-backspace"  data-vvveb-action="clearComponentSearch">
+                <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-macha-action="componentSearch" data-macha-on="keyup">
+                <button id="clear-backspace"  data-macha-action="clearComponentSearch">
                     <i class="la la-close"></i>
                 </button>
 
@@ -202,7 +202,6 @@
                 </div>
             </div>
         </div>
-
 
     </div>
 
@@ -253,17 +252,17 @@
 
         <div class="btn-group" role="group">
 
-            <button id="code-editor-btn btn-sm" data-view="mobile" class="btn btn-light btn-sm"  title="Code editor" data-vvveb-action="toggleEditor">
+            <button id="code-editor-btn btn-sm" data-view="mobile" class="btn btn-light btn-sm"  title="Code editor" data-macha-action="toggleEditor">
                 <i class="la la-code"></i> Code editor
             </button>
 
             <div id="toggleEditorJsExecute" class="custom-control custom-checkbox mt-1" style="display:none">
-                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" data-vvveb-action="toggleEditorJsExecute">
+                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" data-macha-action="toggleEditorJsExecute">
                 <label class="custom-control-label" for="customCheck"><small>Run code on edit</small></label>
             </div>
         </div>
 
-        <div id="vvveb-code-editor">
+        <div id="macha-code-editor">
             <textarea class="form-control"></textarea>
             <div>
 
@@ -271,10 +270,9 @@
         </div>
     </div>
 
-
     <!-- templates -->
 
-    <script id="vvveb-input-textinput" type="text/html">
+    <script id="macha-input-textinput" type="text/html">
 
         <div>
             <input name="{{ '{%=key%}' }}" type="text" class="form-control"/>
@@ -282,7 +280,7 @@
 
     </script>
 
-    <script id="vvveb-input-checkboxinput" type="text/html">
+    <script id="macha-input-checkboxinput" type="text/html">
 
         <div class="custom-control custom-checkbox">
             <input name="{{ '{%=key%}' }}" class="custom-control-input" type="checkbox" id="{{ '{%=key%}' }}_check">
@@ -291,7 +289,7 @@
 
     </script>
 
-    <script id="vvveb-input-radioinput" type="text/html">
+    <script id="macha-input-radioinput" type="text/html">
 
         <div>
 
@@ -308,7 +306,7 @@
 
     </script>
 
-    <script id="vvveb-input-radiobuttoninput" type="text/html">
+    <script id="macha-input-radiobuttoninput" type="text/html">
 
         <div class="btn-group btn-group-toggle  {{ '{%if (extraclass) { %}' }}{{ '{%=extraclass%}' }}{{ '{% } %}' }} clearfix" data-toggle="buttons">
 
@@ -326,8 +324,7 @@
 
     </script>
 
-
-    <script id="vvveb-input-toggle" type="text/html">
+    <script id="macha-input-toggle" type="text/html">
 
         <div class="toggle">
             <input type="checkbox" name="{{ '{%=key%}' }}" value="{{ '{%=on%}' }}" data-value-off="{{ '{%=off%}' }}" data-value-on="{{ '{%=on%}' }}" class="toggle-checkbox" id="{{ '{%=key%}' }}">
@@ -339,14 +336,13 @@
 
     </script>
 
-    <script id="vvveb-input-header" type="text/html">
+    <script id="macha-input-header" type="text/html">
 
         <h6 class="header">{{ '{%=header%}' }}</h6>
 
     </script>
 
-
-    <script id="vvveb-input-select" type="text/html">
+    <script id="macha-input-select" type="text/html">
 
         <div>
 
@@ -360,8 +356,7 @@
 
     </script>
 
-
-    <script id="vvveb-input-listinput" type="text/html">
+    <script id="macha-input-listinput" type="text/html">
 
         <div class="row">
 
@@ -394,7 +389,7 @@
 
     </script>
 
-    <script id="vvveb-input-grid" type="text/html">
+    <script id="macha-input-grid" type="text/html">
 
         <div class="row">
             <div class="mb-1 col-12">
@@ -477,7 +472,7 @@
 
     </script>
 
-    <script id="vvveb-input-textvalue" type="text/html">
+    <script id="macha-input-textvalue" type="text/html">
 
         <div class="row">
             <div class="col-6 mb-1">
@@ -504,7 +499,7 @@
 
     </script>
 
-    <script id="vvveb-input-rangeinput" type="text/html">
+    <script id="macha-input-rangeinput" type="text/html">
 
         <div>
             <input name="{{ '{%=key%}' }}" type="range" min="{{ '{%=min%}' }}" max="{{ '{%=max%}' }}" step="{{ '{%=step%}' }}" class="form-control"/>
@@ -512,7 +507,7 @@
 
     </script>
 
-    <script id="vvveb-input-imageinput" type="text/html">
+    <script id="macha-input-imageinput" type="text/html">
 
         <div>
             <input name="{{ '{%=key%}' }}" type="text" class="form-control"/>
@@ -521,7 +516,7 @@
 
     </script>
 
-    <script id="vvveb-input-colorinput" type="text/html">
+    <script id="macha-input-colorinput" type="text/html">
 
         <div>
             <input name="{{ '{%=key%}' }}" type="color" value="{{ '{%=value%}' }}" pattern="#[a-f0-9]{6}" class="form-control"/>
@@ -529,7 +524,7 @@
 
     </script>
 
-    <script id="vvveb-input-numberinput" type="text/html">
+    <script id="macha-input-numberinput" type="text/html">
         <div>
             <input name="{{ '{%=key%}' }}" type="number" value="{{ '{%=value%}' }}"
                    {{ '{% if (typeof min !== \'undefined\' && min != false) { %}' }}min="{{ '{%=min%}' }}"{{ '{% } %}' }}
@@ -539,7 +534,7 @@
         </div>
     </script>
 
-    <script id="vvveb-input-button" type="text/html">
+    <script id="macha-input-button" type="text/html">
         <div>
             <button class="btn btn-sm btn-primary">
                 <i class="la  {{ '{% if (typeof icon !== \'undefined\') { %}' }} {{ '{%=icon%}' }} {{ '{% } else { %}' }} la-plus {{ '{% } %}' }} la-lg"></i> {{ '{%=text%}' }}
@@ -547,7 +542,7 @@
         </div>
     </script>
 
-    <script id="vvveb-input-cssunitinput" type="text/html">
+    <script id="macha-input-cssunitinput" type="text/html">
         <div class="input-group" id="cssunit-{{ '{%=key%}' }}">
             <input name="number" type="number" value="{{ '{%=value%}' }}"
                    {{ '{% if (typeof min !== \'undefined\' && min != false) { %}' }}min="{{ '{%=min%}' }}"{{ '{% } %}' }}
@@ -568,20 +563,20 @@
     </script>
 
 
-    <script id="vvveb-filemanager-page" type="text/html">
+    <script id="macha-filemanager-page" type="text/html">
         <li data-url="{{ '{%=url%}' }}" data-page="{{ '{%=name%}' }}">
             <label for="{{ '{%=name%}' }}"><span>{{ '{%=title%}' }}</span></label> <input type="checkbox" checked id="{{ '{%=name%}' }}" />
             <ol></ol>
         </li>
     </script>
 
-    <script id="vvveb-filemanager-component" type="text/html">
+    <script id="macha-filemanager-component" type="text/html">
         <li data-url="{{ '{%=url%}' }}" data-component="{{ '{%=name%}' }}" class="file">
             <a href="{{ '{%=url%}' }}"><span>{{ '{%=title%}' }}</span></a>
         </li>
     </script>
 
-    <script id="vvveb-input-sectioninput" type="text/html">
+    <script id="macha-input-sectioninput" type="text/html">
 
         <label class="header" data-header="{{ '{%=key%}' }}" for="header_{{ '{%=key%}' }}"><span>&ensp;{{ '{%=header%}' }}</span> <div class="header-arrow"></div></label>
         <input class="header_check" type="checkbox" {{ '{% if (typeof expanded !== \'undefined\' && expanded == false) { %}' }} {{ '{% } else { %}' }}checked="true"{{ '{% } %}' }} id="header_{{ '{%=key%}' }}">
@@ -590,7 +585,7 @@
     </script>
 
 
-    <script id="vvveb-property" type="text/html">
+    <script id="macha-property" type="text/html">
 
         <div class="form-group {{ '{% if (typeof col !== \'undefined\' && col != false) { %}' }} col-sm-{{ '{%=col%}' }} d-inline-block {{ '{% } else { %}' }}row{{ '{% } %}' }}" data-key="{{ '{%=key%}' }}" {{ '{% if (typeof group !== \'undefined\' && group != null) { %}' }}data-group="{{ '{%=group%}' }}" {{ '{% } %}' }}>
 
@@ -632,7 +627,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">VvvebJs</h5>
+                    <h5 class="modal-title">machaJs</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -680,13 +675,13 @@
     <script>
         $(document).ready(function()
         {
-            Vvveb.Builder.init('{{ path('default_home_page') }}', function() {
+            macha.Builder.init('{{ path('default_home_page') }}', function() {
                 //run code after page/iframe is loaded
             });
 
-            Vvveb.Gui.init();
-            Vvveb.FileManager.init();
-            Vvveb.FileManager.addPages(
+            macha.Gui.init();
+            macha.FileManager.init();
+            macha.FileManager.addPages(
                 [
                     {name:"narrow-jumbotron", title:"Jumbotron",  url: "{{ path('default_home_page') }}", assets: ['demo/narrow-jumbotron/narrow-jumbotron.css']},
                     {name:"landio", title:"Landio landing page",  url: "demo/landio/index.html", assets: ['demo/landio/landio.css']},
@@ -697,10 +692,9 @@
                     {name:"pricing", title:"Pricing",  url: "demo/pricing/index.html", assets: ['demo/pricing/pricing.css']},
                     {name:"product", title:"Product",  url: "demo/product/index.html", assets: ['demo/product/product.css']},
                     {name:"ecommerce", title:"eCommerce homepage",  url: "ecommerce_demo/index.html"},
-                    {name:"test", title:"test",  url: "http://vvveb_install.givan.ro/"},
                 ]);
 
-            Vvveb.FileManager.loadPage("narrow-jumbotron");
+            macha.FileManager.loadPage("narrow-jumbotron");
         });
     </script>
 </body>

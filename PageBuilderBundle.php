@@ -18,6 +18,7 @@
 
 namespace Benmacha\PageBuilderBundle;
 
+use Benmacha\PageBuilderBundle\DependencyInjection\BenmachaPageBuilderExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -27,6 +28,6 @@ class PageBuilderBundle extends Bundle
     {
         parent::build($container);
 
-        //$container->registerExtension(new BenmachaTemplateExtenstion());
+        $container->registerExtension(new BenmachaPageBuilderExtension());
     }
 }
