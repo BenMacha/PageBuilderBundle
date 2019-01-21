@@ -18,7 +18,7 @@
         <tbody>
         {% for project in projects %}
             <tr>
-                <td><a href="{{ path('project_show', { 'id': project.id }) }}">{{ project.id }}</a></td>
+                <td><a href="{{ path('benmacha_pagebuilder_project_show', { 'id': project.id }) }}">{{ project.id }}</a></td>
                 <td>{{ project.name }}</td>
                 <td>{% if project.createdAt %}{{ project.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if project.updatedAt %}{{ project.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -27,10 +27,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('project_show', { 'id': project.id }) }}">show</a>
+                            <a href="{{ path('benmacha_pagebuilder_project_show', { 'id': project.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('project_edit', { 'id': project.id }) }}">edit</a>
+                            <a href="{{ path('benmacha_pagebuilder_project_edit', { 'id': project.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -41,7 +41,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('project_new') }}">Create a new project</a>
+            <a href="{{ path('benmacha_pagebuilder_project_new') }}">Create a new project</a>
         </li>
     </ul>
 {% endblock %}

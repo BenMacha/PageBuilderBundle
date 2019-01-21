@@ -13,8 +13,7 @@ class ProjectService
      */
     private $em;
     private $projectClass;
-    private $pageClass;
-    private $versionClass;
+    private $manager;
 
     public function __construct(EntityManagerInterface $em, $projectClass)
     {
@@ -31,10 +30,23 @@ class ProjectService
             $this->projectClass = $metadata->getName();
         }
 
-        return $this->pageClass;
+        return $this->projectClass;
+    }
+
+
+    public function createProject()
+    {
+        $class = $this->getProjectClass();
+        $project = new $class();
+
+        return $project;
     }
 
     public function findAll(){
         return $this->manager->findAll();
+    }
+
+    public function find($id){
+        return $this->manager->find($id);
     }
 }
