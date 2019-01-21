@@ -40,4 +40,85 @@ abstract class Version
      */
     protected $version;
 
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set sourceCode.
+     *
+     * @param string $sourceCode
+     *
+     * @return Version
+     */
+    public function setSourceCode($sourceCode)
+    {
+        $this->sourceCode = $sourceCode;
+
+        return $this;
+    }
+
+    /**
+     * Get sourceCode.
+     *
+     * @return string
+     */
+    public function getSourceCode()
+    {
+        return $this->sourceCode;
+    }
+
+    /**
+     * Set version.
+     *
+     * @param string $version
+     *
+     * @return Version
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+
+    /**
+     * Get version.
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * Set page.
+     *
+     * @param Page|null $page
+     *
+     * @return Version
+     */
+    public function setPage(Page $page = null)
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * Get page.
+     *
+     * @return Page
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
 }

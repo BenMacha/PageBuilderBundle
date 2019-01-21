@@ -26,7 +26,7 @@ abstract class Project
     protected $name;
 
     /**
-     * @var Page
+     * @var Page[]
      *
      * @ORM\OneToMany(targetEntity="Page", mappedBy="project")
      */
@@ -34,6 +34,82 @@ abstract class Project
 
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name.
+     *
+     * @param string $name
+     *
+     * @return Project
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Add page.
+     *
+     * @param Page $page
+     *
+     * @return Project
+     */
+    public function addPage(Page $page)
+    {
+        $this->pages[] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Remove page.
+     *
+     * @param Page $page
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removePage(Page $page)
+    {
+        return $this->pages->removeElement($page);
+    }
+
+    /**
+     * Get pages.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPages()
+    {
+        return $this->pages;
+    }
 
 }
