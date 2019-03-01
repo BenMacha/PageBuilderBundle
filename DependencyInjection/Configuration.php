@@ -43,9 +43,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('project_class')->isRequired()->cannotBeEmpty()->end()
             ->scalarNode('page_class')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('version_class')->isRequired()->cannotBeEmpty()->end()
+            //->scalarNode('project_class')->isRequired()->cannotBeEmpty()->end()
+            //->scalarNode('version_class')->isRequired()->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

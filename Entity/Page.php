@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\MappedSuperclass;
 
 /** @MappedSuperclass */
-abstract class Page
+abstract class Page implements PageInterface
 {
 
     /**
@@ -21,25 +21,18 @@ abstract class Page
     protected $id;
 
     /**
-     * @var Page
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="pages")
+     * @ORM\Column(name="name", type="string",length=50, unique=true)
      */
-    protected $project;
-
-    /**
-     * @var Page[]
-     *
-     * @ORM\OneToMany(targetEntity="Version", mappedBy="page")
-     */
-    protected $versions;
+    protected $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255, unique=true)
+     * @ORM\Column(name="names", type="string",length=50, unique=true)
      */
-    protected $path;
+    protected $name;
 
     /**
      * @var string
@@ -48,18 +41,7 @@ abstract class Page
      */
     protected $sourceCode;
 
-
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->versions = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Get id.
-     *
      * @return int
      */
     public function getId()
@@ -67,47 +49,44 @@ abstract class Page
         return $this->id;
     }
 
-    /**
-     * Set path.
-     *
-     * @param string $path
-     *
-     * @return Page
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-
-        return $this;
-    }
 
     /**
-     * Get path.
-     *
      * @return string
      */
-    public function getPath()
+    public function getTitle()
     {
-        return $this->path;
+        return $this->title;
     }
 
     /**
-     * Set sourceCode.
-     *
-     * @param string $sourceCode
-     *
+     * @param string $title
      * @return Page
      */
-    public function setSourceCode($sourceCode)
+    public function setTitle(string $title)
     {
-        $this->sourceCode = $sourceCode;
-
+        $this->title = $title;
         return $this;
     }
 
     /**
-     * Get sourceCode.
-     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Page
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getSourceCode()
@@ -116,63 +95,15 @@ abstract class Page
     }
 
     /**
-     * Set project.
-     *
-     * @param Project|null $project
-     *
+     * @param string $sourceCode
      * @return Page
      */
-    public function setProject(Project $project = null)
+    public function setSourceCode(string $sourceCode)
     {
-        $this->project = $project;
-
+        $this->sourceCode = $sourceCode;
         return $this;
     }
 
-    /**
-     * Get project.
-     *
-     * @return Project|null
-     */
-    public function getProject()
-    {
-        return $this->project;
-    }
 
-    /**
-     * Add version.
-     *
-     * @param Version $version
-     *
-     * @return Page
-     */
-    public function addVersion(Version $version)
-    {
-        $this->versions[] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Remove version.
-     *
-     * @param Version $version
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeVersion(Version $version)
-    {
-        return $this->versions->removeElement($version);
-    }
-
-    /**
-     * Get versions.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getVersions()
-    {
-        return $this->versions;
-    }
 
 }

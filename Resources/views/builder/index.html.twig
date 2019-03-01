@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app.request.locale }}">
 <head>
-    <meta charset="utf-8">
+    <meta charset="{{ _charset }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,7 +17,6 @@
     <link href="{{ asset('bundles/benmachapagebuilder/libs/codemirror/theme/material.css') }}" rel="stylesheet"/>
 </head>
 <body>
-
 
 <div id="macha-builder">
 
@@ -82,7 +80,7 @@
                 <ol>
                     <!-- li>
                         <label for="folder1"><span>Folder 1</span></label> <input type="checkbox" checked id="folder1" />
-                        <ol> 
+                        <ol>
                             <li class="file"><a href="document.html.pdf">File 1</a></li>
                             <li>
                                 <label for="subfolder1">Subfolder 1</label> <input type="checkbox" id="subfolder1" />
@@ -253,7 +251,6 @@
         </div>
     </div>
 
-
     <div id="canvas">
         <div id="iframe-wrapper">
             <div id="iframe-layer">
@@ -318,7 +315,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <!-- templates -->
 
     <script id="macha-input-textinput" type="text/html">
@@ -704,8 +701,9 @@
     <!-- inputs-->
     <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/inputs.js') }}"></script>
     <!-- components-->
-    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/components-bootstrap4.js') }}"></script>
-    <script src="{{ asset('bundles/benmachapagebuilder/libs/builder/components-widgets.js') }}"></script>
+    <script src="{{ path('benmacha_pagebuilder_components') }}"></script>
+    <script src="{{ path('benmacha_pagebuilder_widgets') }}"></script>
+    <script src="{{ path('benmacha_pagebuilder_server') }}"></script>
 
     <!-- plugins -->
 
@@ -726,7 +724,9 @@
             macha.FileManager.init();
             macha.FileManager.addPages(
                 [
-                    {name:"narrow-jumbotron", title:"Jumbotron",  url: "{{ path('default_home_page') }}"},
+                    {% for page in pages %}
+                    {name:"{{ page.name }}", title:"{{ page.title }}",  url: "{{ path('default_home_page') }}"},
+                    {% endfor %}
                     /*{name:"landio", title:"Landio landing page",  url: "demo/landio/index.html", assets: ['demo/landio/landio.css']},
                     {name:"album", title:"Album",  url: "demo/album/index.html", assets: ['demo/album/album.css']},
                     {name:"blog", title:"Blog",  url: "demo/blog/index.html", assets: ['demo/blog/blog.css']},
@@ -740,6 +740,7 @@
             macha.FileManager.loadPage("narrow-jumbotron");
         });
     </script>
+
 </body>
 </html>
 

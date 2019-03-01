@@ -26,7 +26,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="benmacga_pagebuilder_home")
+     * @Route("/", name="benmacha_pagebuilder_home")
 
      *
      * @param Request                $request
@@ -36,20 +36,38 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request)
     {
-        return $this->render('@BenmachaPageBuilder/builder/index.html.twig');
+        $pageService = $this->get('benmacha_pagebuilder_page_service');
+
+        return $this->render('@BenmachaPageBuilder/builder/index.html.twig', array(
+            'pages' => $pageService->findAll(),
+        ));
     }
 
     /**
-     * @Route("/components.js", name="benmacha_pagebuilder_components")
-     *
-     * @param Request                $request
-     *
-     *
-     * @return Response
+     * @Route("/components-bootstrap4.js", name="benmacha_pagebuilder_components")
+
      */
-    public function componentsAction(Request $request)
+    public function componentsAction( )
     {
-        return $this->render('@BenmachaPageBuilder/builder/components.js.twig');
+        return $this->render('@BenmachaPageBuilder/builder/components-bootstrap4.js.twig');
+    }
+
+    /**
+     * @Route("/components-widgets.js", name="benmacha_pagebuilder_widgets")
+     *
+     */
+    public function widgetsAction( )
+    {
+        return $this->render('@BenmachaPageBuilder/builder/components-widget.js.twig');
+    }
+
+    /**
+     * @Route("/components-bootstrap4.js", name="benmacha_pagebuilder_server")
+     *
+     */
+    public function serverAction( )
+    {
+        return $this->render('@BenmachaPageBuilder/builder/components-server.js.twig');
     }
 
 }

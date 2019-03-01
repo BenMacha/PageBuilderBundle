@@ -25,54 +25,54 @@ macha.Components.add("components/product", {
 
     image: "icons/map.svg",
     html: '<iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed"></iframe>',
-    
-	properties: [
-	{
-        name: "Id",
-        key: "id",
-        htmlAttr: "id",
-        inputtype: TextInput
-    },
-	{
-        name: "Select",
-        key: "id",
-        htmlAttr: "id",
-        inputtype: SelectInput,
-        data:{
-			options: [{
-                value: "",
-                text: "None"
-            }, {
-                value: "pull-left",
-                text: "Left"
-            }, {
-                value: "pull-right",
-                text: "Right"
-            }]
-       },
-    },
-	{
-        name: "Select 2",
-        key: "id",
-        htmlAttr: "id",
-        inputtype: SelectInput,
-        data:{
-			options: [{
-                value: "",
-                text: "nimic"
-            }, {
-                value: "pull-left",
-                text: "gigi"
-            }, {
-                value: "pull-right",
-                text: "vasile"
-            }, {
-                value: "pull-right",
-                text: "sad34"
-            }]
-       },
-    }]
-});    
+
+    properties: [
+        {
+            name: "Id",
+            key: "id",
+            htmlAttr: "id",
+            inputtype: TextInput
+        },
+        {
+            name: "Select",
+            key: "id",
+            htmlAttr: "id",
+            inputtype: SelectInput,
+            data:{
+                options: [{
+                    value: "",
+                    text: "None"
+                }, {
+                    value: "pull-left",
+                    text: "Left"
+                }, {
+                    value: "pull-right",
+                    text: "Right"
+                }]
+            },
+        },
+        {
+            name: "Select 2",
+            key: "id",
+            htmlAttr: "id",
+            inputtype: SelectInput,
+            data:{
+                options: [{
+                    value: "",
+                    text: "nimic"
+                }, {
+                    value: "pull-left",
+                    text: "gigi"
+                }, {
+                    value: "pull-right",
+                    text: "vasile"
+                }, {
+                    value: "pull-right",
+                    text: "sad34"
+                }]
+            },
+        }]
+});
 
 
 macha.Components.add("components/products", {
@@ -82,15 +82,15 @@ macha.Components.add("components/products", {
     image: "icons/products.svg",
     html: '<div class="form-group"><label>Your response:</label><textarea class="form-control"></textarea></div>',
     onPropertiesShow: function ()
-	{
-		$('.form-group[class*="group-"]').hide();
-		current = $('.form-group input[name="type"]:checked').val();
-		//console.log(current);
-		//console.log(this.el);
-		$('.form-group[class*="group-' + current + '"]').show();
-		
-		jQuery("input.product_autocomplete", this.el).autocomplete("/?module=ajax&action=product_autocomplete", {json_key:'products'});		
-	},
+    {
+        $('.form-group[class*="group-"]').hide();
+        current = $('.form-group input[name="type"]:checked').val();
+        //console.log(current);
+        //console.log(this.el);
+        $('.form-group[class*="group-' + current + '"]').show();
+
+        jQuery("input.product_autocomplete", this.el).autocomplete("/?module=ajax&action=product_autocomplete", {json_key:'products'});
+    },
     properties: [{
         name: false,
         key: "type",
@@ -111,15 +111,15 @@ macha.Components.add("components/products", {
                 icon:"la la-search",
             }],
         },
-		onChange : function(element, value, input) {
-			
+        onChange : function(element, value, input) {
+
 //			console.log(element, value, input);
 //			current = $(event.currentTarget).val();
-			$('.form-group[data-group]').hide();
-			$('.form-group[data-group="'+ input.value + '"]').show();
+            $('.form-group[data-group]').hide();
+            $('.form-group[data-group="'+ input.value + '"]').show();
 
-			return element;
-		},            
+            return element;
+        },
     },{
         name: "Products",
         key: "height",
@@ -135,7 +135,7 @@ macha.Components.add("components/products", {
             min: "1",
             max: "1024",
             step: "1"
-        },        
+        },
         getFromNode: function(node) {
             return 10
         },
@@ -148,7 +148,7 @@ macha.Components.add("components/products", {
             min: "1",
             max: "1024",
             step: "1"
-        },        
+        },
         inputtype: NumberInput,
         getFromNode: function(node) {
             return 0
@@ -160,7 +160,7 @@ macha.Components.add("components/products", {
         inputtype: SelectInput,
         data: {
             options: [{
-				value: "price_asc",
+                value: "price_asc",
                 text: "Price Ascending"
             }, {
                 value: "price_desc",
@@ -178,44 +178,44 @@ macha.Components.add("components/products", {
                 value: "sales_desc",
                 text: "Sales Descending"
             }]
-		}
-	},{
+        }
+    },{
         name: "Category",
         group:"automatic",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Manufacturer",
         group:"automatic",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         nolabel:false,
         key:"fields",
         inputtype: TextInput,
         data: {text:"Fields"}
-	},{
+    },{
         name: "Name",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Price",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Image",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Sale badge",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Currency",
         key: "category",
         inputtype: TextInput
     }
-    
+
     ]
 });
 
@@ -228,15 +228,15 @@ macha.Components.add("components/manufacturers", {
         nolabel:false,
         inputtype: TextInput,
         data: {text:"Fields"}
-	},{
+    },{
         name: "Name",
         key: "category",
         inputtype: TextInput
-	},{
+    },{
         name: "Image",
         key: "category",
         inputtype: TextInput
-	}
+    }
     ]
 });
 

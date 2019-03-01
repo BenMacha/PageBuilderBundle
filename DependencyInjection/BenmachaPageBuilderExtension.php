@@ -45,8 +45,8 @@ class BenmachaPageBuilderExtension extends Extension implements ExtensionInterfa
     public function process(ContainerBuilder $container)
     {
         $container->setParameter('benmacha.pagebuilder.model.page', $this->config['page_class']);
-        $container->setParameter('benmacha.pagebuilder.model.project', $this->config['project_class']);
-        $container->setParameter('benmacha.pagebuilder.model.version', $this->config['version_class']);
+        //$container->setParameter('benmacha.pagebuilder.model.project', $this->config['project_class']);
+        //$container->setParameter('benmacha.pagebuilder.model.version', $this->config['version_class']);
 
 
     }

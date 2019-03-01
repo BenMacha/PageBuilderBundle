@@ -2,6 +2,7 @@
 
 namespace Benmacha\PageBuilderBundle\Services;
 
+use Benmacha\PageBuilderBundle\Entity\PageInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
 
@@ -12,30 +13,21 @@ class PageService
      * @var EntityManagerInterface
      */
     private $em;
-    private $projectClass;
+    private $manager;
     private $pageClass;
-    private $versionClass;
 
-    public function __construct(EntityManagerInterface $em, $projectClass, $pageClass, $versionClass)
+    public function __construct(EntityManagerInterface $em, $pageClass)
     {
-
         $this->em = $em;
-        $this->projectClass = $projectClass;
         $this->pageClass = $pageClass;
-        $this->versionClass = $versionClass;
+
+        $this->manager = $em->getRepository($pageClass);
 
     }
 
-    public function getProjectClass()
-    {
-        if (false !== strpos($this->projectClass, ':')) {
-            $metadata = $this->em->getClassMetadata($this->projectClass);
-            $this->projectClass = $metadata->getName();
-        }
-
-        return $this->pageClass;
-    }
-
+    /**
+     * @return string
+     */
     public function getPageClass()
     {
         if (false !== strpos($this->pageClass, ':')) {
@@ -46,12 +38,30 @@ class PageService
         return $this->pageClass;
     }
 
-    public function getVersionClass()
+    /**
+     * @return mixed
+     */
+    public function createPage()
     {
-        if (false !== strpos($this->versionClass, ':')) {
-            $metadata = $this->em->getClassMetadata($this->versionClass);
-            $this->versionClass = $metadata->getName();
-        }
-        return $this->versionClass;
+        $class = $this->getPageClass();
+        $project = new $class();
+
+        return $project;
     }
+
+    /**
+     * @return object[]
+     */
+    public function findAll(){
+        return $this->manager->findAll();
+    }
+
+    /**
+     * @param $id
+     * @return object|null
+     */
+    public function find($id){
+        return $this->manager->find($id);
+    }
+
 }
